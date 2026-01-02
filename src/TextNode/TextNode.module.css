@@ -1,0 +1,20 @@
+.variable-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.variable-list > * {
+    flex: 0 0 auto;
+}
+.variable {
+    border-radius: var(--border-radius-default);
+    padding: 0.3rem 0.6rem;
+
+    border: 1px solid;
+}
+.variable span {
+    font-size: var(--small-text);
+}
