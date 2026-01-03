@@ -11,7 +11,10 @@ import { LLMNode } from "./nodes/llmNode";
 import { OutputNode } from "./nodes/outputNode";
 import { TextNode } from "./TextNode/TextNode";
 import "reactflow/dist/style.css";
-
+import { ColorNode } from "./nodes/colorNode";
+import { MathNode } from "./nodes/mathNode";
+import { SwitchLogicNode } from "./nodes/switchLogicNode";
+import { DateNode } from "./nodes/dateNode";
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 const nodeTypes = {
@@ -19,6 +22,10 @@ const nodeTypes = {
     llm: LLMNode,
     customOutput: OutputNode,
     text: TextNode,
+    color: ColorNode,
+    math: MathNode,
+    switch: SwitchLogicNode,
+    date: DateNode,
 };
 
 const selector = (state) => ({

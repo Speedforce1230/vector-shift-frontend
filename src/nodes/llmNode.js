@@ -27,9 +27,10 @@ export const LLMNode = ({ id, data }) => {
                     type: "source",
                 },
             ]}
+            description="Connect with an LLM and provide knowledge bases and prompts to generate outputs."
             title="LLM"
         >
-            <NodeDescription description="This is a LLM."></NodeDescription>
+            <NodeDescription description="Just a LLM."></NodeDescription>
         </BaseNode>
     );
 };

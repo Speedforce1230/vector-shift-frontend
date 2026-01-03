@@ -30,3 +30,6 @@ code {
     stroke: #0080ff; /* border color */
     stroke-width: 2;
 }
+.nodrag {
+    resize: none;
+}

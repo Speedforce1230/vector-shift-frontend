@@ -21,6 +21,7 @@ export const OutputNode = ({ id, data }) => {
                     label: "Result",
                 },
             ]}
+            description="The final output."
             title="Output"
         >
             <NodeInput

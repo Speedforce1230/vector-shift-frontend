@@ -1,7 +1,6 @@
 // inputNode.js
 
 import { useState } from "react";
-import { Position } from "reactflow";
 import { BaseNode } from "../BaseNode/BaseNode";
 import { NodeInput } from "../components/NodeInput/NodeInput";
 import { NodeSelectDropdown } from "../components/NodeSelectDropdown/NodeSelectDropdown";
@@ -16,6 +15,7 @@ export const InputNode = ({ id, data }) => {
         <BaseNode
             title="Input"
             handles={[{ type: "source", id, label: "Output" }]}
+            description="Pass data of different types into your node design."
         >
             <NodeInput
                 label="Name: "

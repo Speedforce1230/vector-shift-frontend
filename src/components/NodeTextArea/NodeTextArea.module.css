@@ -1,14 +1,14 @@
 .input {
-    padding: 0.6rem 0.6rem;
+    padding: 0.3rem 0.3rem;
     border: none;
-    background-color: #1b1b1b;
+    background-color: #656565;
     color: #f0f0f0;
     font-size: var(--normal-text);
-    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
     border-radius: var(--border-radius-default);
 }
 .input:hover {
-    background-color: #080808;
+    background-color: #969696;
 }
 .label {
     font-size: var(--normal-text);
@@ -22,8 +22,8 @@
     gap: 0.2rem;
 }
 .input:focus {
-    outline: 2px solid #191919;
-
+    outline: none;
+    border: none;
     background-color: #f0f0f0;
     color: #191919;
 }

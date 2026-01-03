@@ -1,7 +1,13 @@
 import styles from "./NodeInput.module.css";
-export const NodeInput = ({ label, type, placeholder, value, onChange }) => {
+export const NodeInput = ({
+    type,
+    label,
+    placeholder,
+    value,
+    onChange = () => {},
+}) => {
     return (
-        <label>
+        <label className={`${styles["container"]} nodrag`}>
             <span className={`${styles.label}`}>{label}</span>
             <input
                 className={`${styles.input}`}

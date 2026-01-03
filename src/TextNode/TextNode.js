@@ -12,7 +12,7 @@ export const TextNode = ({ id, data }) => {
             type: "source",
             position: Position.Right,
             id: "output",
-            label: "Output",
+            label: "Result",
             style: { top: "50%" },
         },
     ]);
@@ -44,7 +44,7 @@ export const TextNode = ({ id, data }) => {
             id: "output",
             type: "source",
             position: Position.Right,
-            label: "Output",
+            label: "Result",
             style: { top: "50%" },
         };
         setHandles([outputHandle, ...newHandles]);
@@ -55,7 +55,11 @@ export const TextNode = ({ id, data }) => {
         updateNodeInternals(id);
     }, [id, updateNodeInternals, handles]);
     return (
-        <BaseNode title="Text" handles={handles}>
+        <BaseNode
+            title="Text"
+            handles={handles}
+            description="Pass dynamically processed text with the '{{' notation."
+        >
             <NodeInput
                 label="Text: "
                 onChange={setCurrentText}
