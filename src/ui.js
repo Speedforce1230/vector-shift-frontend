@@ -15,6 +15,7 @@ import { ColorNode } from "./nodes/colorNode";
 import { MathNode } from "./nodes/mathNode";
 import { SwitchLogicNode } from "./nodes/switchLogicNode";
 import { DateNode } from "./nodes/dateNode";
+import { CompareNumberNode } from "./nodes/compareNumberNode";
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
 const nodeTypes = {
@@ -26,6 +27,7 @@ const nodeTypes = {
     math: MathNode,
     switch: SwitchLogicNode,
     date: DateNode,
+    compare: CompareNumberNode,
 };
 
 const selector = (state) => ({
@@ -101,7 +103,7 @@ export const PipelineUI = () => {
         animated: true,
         style: {
             stroke: "#a855f7",
-            strokeWidth: 3,
+            strokeWidth: 5,
         },
     };
     return (
@@ -125,11 +127,22 @@ export const PipelineUI = () => {
                     proOptions={proOptions}
                     snapGrid={[gridSize, gridSize]}
                     connectionLineType="simplebezier"
-                    connectionLineStyle={{ stroke: "#a855f7", strokeWidth: 2 }}
+                    connectionLineStyle={{ stroke: "#a855f7", strokeWidth: 5 }}
                 >
                     <Background color="#f0f0f0" gap={gridSize} />
-                    <Controls color="#f0f0f0" />
-                    <MiniMap className="map" />
+                    <Controls />
+                    <MiniMap
+                        className="map"
+                        maskColor="rgba(0, 0, 0, 0.7)"
+                        style={{ backgroundColor: "#141414" }}
+                        nodeColor={(node) => {
+                            // return node.type === 'custom' ? '#8B0000' : '#555';
+
+                            return "#82344b";
+                        }}
+                        nodeStrokeColor="#fff"
+                        nodeStrokeWidth={10}
+                    />
                 </ReactFlow>
             </div>
         </>

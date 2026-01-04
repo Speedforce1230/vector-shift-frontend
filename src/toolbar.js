@@ -21,6 +21,7 @@ export const PipelineToolbar = () => {
                 <DraggableNode type="math" label="Math"></DraggableNode>
                 <DraggableNode type="switch" label="Switch"></DraggableNode>
                 <DraggableNode type="date" label="Date"></DraggableNode>
+                <DraggableNode type="compare" label="Compare"></DraggableNode>
             </div>
         </div>
     );

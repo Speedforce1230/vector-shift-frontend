@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BaseNode } from "../BaseNode/BaseNode";
 import { NodeInput } from "../components/NodeInput/NodeInput";
 import { NodeSelectDropdown } from "../components/NodeSelectDropdown/NodeSelectDropdown";
+import { NodeTextArea } from "../components/NodeTextArea/NodeTextArea";
 
 export const InputNode = ({ id, data }) => {
     const [currName, setCurrName] = useState(
@@ -17,17 +18,17 @@ export const InputNode = ({ id, data }) => {
             handles={[{ type: "source", id, label: "Output" }]}
             description="Pass data of different types into your node design."
         >
-            <NodeInput
-                label="Name: "
+            <NodeTextArea
+                label="Value: "
                 value={currName}
                 onChange={setCurrName}
-                type="text"
-            ></NodeInput>
+                type={inputType}
+            ></NodeTextArea>
             <NodeSelectDropdown
                 label="Type: "
                 value={inputType}
                 onChange={setInputType}
-                options={[{ value: "Text" }, { value: "File" }]}
+                options={[{ value: "Text" }, { value: "Number" }]}
             ></NodeSelectDropdown>
         </BaseNode>
     );

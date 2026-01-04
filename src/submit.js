@@ -23,7 +23,7 @@ export const SubmitButton = () => {
                 targetHandle: edge.targetHandle,
             })),
         };
-        console.log("🚀 Sending Pipeline to Backend:", payload);
+
         try {
             const resp = await fetch("http://localhost:8000/pipelines/parse", {
                 method: "POST",
@@ -42,13 +42,7 @@ export const SubmitButton = () => {
         }
     };
     return (
-        <div
-            style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-            }}
-        >
+        <div className="submit">
             <button type="submit" onClick={handleSubmit}>
                 Submit
             </button>

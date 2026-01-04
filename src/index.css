@@ -10,7 +10,7 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #191919;
+    background-color: #343434;
 }
 * {
     box-sizing: border-box;
@@ -27,9 +27,57 @@ code {
 }
 .react-flow__minimap-mask {
     fill: rgba(0, 0, 0, 0.2);
-    stroke: #0080ff; /* border color */
+    stroke: #0080ff;
     stroke-width: 2;
 }
 .nodrag {
     resize: none;
+}
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.submit button {
+    background-color: #f0f0f0;
+    font-size: var(--normal-text);
+    padding: 1rem;
+    width: 10vw;
+    border: none;
+    border-radius: var(--border-radius-default);
+    transition: background-color 0.3s ease-out;
+    color: #191919;
+}
+.submit button:hover {
+    background-color: #696969;
+    cursor: pointer;
+}
+.react-flow__controls.react-flow__controls {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.react-flow__controls-button.react-flow__controls-button {
+    background-color: #141414;
+    border-bottom: 1px solid #333;
+    fill: #eee;
+    transition: all 0.2s;
+}
+
+.react-flow__controls-button:hover.react-flow__controls-button:hover {
+    background-color: #8b0000;
+    fill: #fff;
+}
+
+.react-flow__controls-button:last-child.react-flow__controls-button:last-child {
+    border-bottom: none;
+}
+.react-flow__handle-left.react-flow__handle-left {
+    transform: translateX(-50%) translateY(-50%);
+}
+.react-flow__handle-right.react-flow__handle-right {
+    transform: translateX(50%) translateY(-50%);
 }

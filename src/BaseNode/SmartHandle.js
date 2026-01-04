@@ -19,6 +19,7 @@ export const SmartHandle = (props) => {
     return (
         <Handle
             {...props}
+            style={{ width: 15, height: 15 }}
             className={`${styles.handle} ${
                 isConnected ? styles.connected : ""
             }`}

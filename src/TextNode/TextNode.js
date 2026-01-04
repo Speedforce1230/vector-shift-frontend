@@ -3,17 +3,21 @@ import { useEffect, useState } from "react";
 import { Position, useUpdateNodeInternals } from "reactflow";
 import { BaseNode } from "../BaseNode/BaseNode";
 import { stringToColor } from "../utility/stringToColor";
-import { NodeInput } from "../components/NodeInput/NodeInput";
+import { NodeTextArea } from "../components/NodeTextArea/NodeTextArea";
 
 export const TextNode = ({ id, data }) => {
     const [currentText, setCurrentText] = useState(data?.text || "{{input}");
     const [handles, setHandles] = useState([
         {
             type: "source",
-            position: Position.Right,
+
             id: "output",
             label: "Result",
-            style: { top: "50%" },
+        },
+        {
+            type: "target",
+            id: "color",
+            label: "Text Color",
         },
     ]);
     const updateNodeInternals = useUpdateNodeInternals();
@@ -34,20 +38,22 @@ export const TextNode = ({ id, data }) => {
                 type: "target",
                 position: Position.Left,
                 label: variable,
-                style: {
-                    top: "30%",
-                },
+
                 data: { color },
             };
         });
+        const inputHandle = {
+            type: "target",
+            id: "color",
+            label: "Text Color",
+        };
         const outputHandle = {
             id: "output",
             type: "source",
             position: Position.Right,
             label: "Result",
-            style: { top: "50%" },
         };
-        setHandles([outputHandle, ...newHandles]);
+        setHandles([...newHandles, outputHandle, inputHandle]);
 
         data.text = currentText;
     }, [currentText, data]);
@@ -60,12 +66,12 @@ export const TextNode = ({ id, data }) => {
             handles={handles}
             description="Pass dynamically processed text with the '{{' notation."
         >
-            <NodeInput
+            <NodeTextArea
                 label="Text: "
                 onChange={setCurrentText}
                 type="text"
                 value={currentText}
-            ></NodeInput>
+            ></NodeTextArea>
         </BaseNode>
     );
 };

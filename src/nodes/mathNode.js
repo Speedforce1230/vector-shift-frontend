@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { BaseNode } from "../BaseNode/BaseNode";
-import { NodeInput } from "../components/NodeInput/NodeInput";
 import { NodeSelectDropdown } from "../components/NodeSelectDropdown/NodeSelectDropdown";
 
 export const MathNode = ({ id, data }) => {
@@ -25,8 +24,6 @@ export const MathNode = ({ id, data }) => {
                 { id: `${id}-output`, label: "Result", type: "source" },
             ]}
         >
-            <NodeInput label="A" type="number" value={data?.a}></NodeInput>
-            <NodeInput label="B" type="number" value={data?.b}></NodeInput>
             <NodeSelectDropdown
                 label="Operation"
                 options={[

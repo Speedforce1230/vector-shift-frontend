@@ -33,7 +33,7 @@ export const OutputNode = ({ id, data }) => {
                 label="Type: "
                 value={outputType}
                 onChange={setOutputType}
-                options={[{ value: "Text" }, { value: "File", label: "Image" }]}
+                options={[{ value: "Text" }, { value: "Number" }]}
             ></NodeSelectDropdown>
         </BaseNode>
     );
