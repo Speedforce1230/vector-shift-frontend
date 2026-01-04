@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { BaseNode } from "../BaseNode/BaseNode";
-import { NodeInput } from "../components/NodeInput/NodeInput";
 import { NodeSelectDropdown } from "../components/NodeSelectDropdown/NodeSelectDropdown";
 import { NodeTextArea } from "../components/NodeTextArea/NodeTextArea";
 
